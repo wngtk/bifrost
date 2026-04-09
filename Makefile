@@ -22,14 +22,14 @@ BLUE=\033[0;34m
 CYAN=\033[0;36m
 NC=\033[0m # No Color
 
+.PHONY: all help dev build-ui build build-cli run run-cli install-air clean test test-cli install-ui setup-workspace work-init work-clean docs docker-image docker-run cleanup-enterprise mod-tidy test-integrations-py test-integrations-ts install-playwright run-e2e run-e2e-ui run-e2e-headed
+
+all: help
+
 # Include deployment recipes
 include recipes/fly.mk
 include recipes/ecs.mk
 include recipes/local-k8s.mk
-
-.PHONY: all help dev build-ui build build-cli run run-cli install-air clean test test-cli install-ui setup-workspace work-init work-clean docs docker-image docker-run cleanup-enterprise mod-tidy test-integrations-py test-integrations-ts install-playwright run-e2e run-e2e-ui run-e2e-headed
-
-all: help
 
 # Default target
 help: ## Show this help message
