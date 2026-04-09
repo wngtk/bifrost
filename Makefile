@@ -36,7 +36,7 @@ include recipes/local-k8s.mk
 help: ## Show this help message
 	@$(ECHO) "$(BLUE)Bifrost Development - Available Commands:$(NC)"
 	@$(ECHO) ""
-	@grep --no-filename -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-15s$(NC) %s\n", $$1, $$2}'
+	@grep -hE '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-15s$(NC) %s\n", $$1, $$2}'
 	@$(ECHO) ""
 	@$(ECHO) "$(YELLOW)Environment Variables:$(NC)"
 	@$(ECHO) "  HOST              Server host (default: localhost)"
